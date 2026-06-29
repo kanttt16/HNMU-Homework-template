@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper,oneside]{ctexart}
+\usepackage{amsmath,amsthm,amssymb,appendix,bm,background,graphicx,hyperref,mathrsfs}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+
+% ===== 章节格式 =====
+\titleformat{\section}{\center\bfseries\Large}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{0.5ex}{0.5ex}
+\titleformat{\subsection}{\raggedright\bfseries\large}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0.3ex}{0.3ex}
+
+% ===== 标题（含装饰线）=====
+\title{
+    \includegraphics[width=10cm]{logo2.png}\\[1.0cm] 
+    \textbf{作业论文标题}\\[0.5cm]
+    \rule{0.5\textwidth}{0.4pt}  % 装饰线
+}
+\author{Kanttt0}
+\date{\today}
+\linespread{1.5}
+
+% ===== 定理环境 =====
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+
+% ===== 摘要格式 =====
+\renewcommand{\abstractname}{\Large\textbf{摘要}}
+
+% ===== 目录引导点 =====
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% ===== 页眉页脚设置 =====
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=0.7cm]{logo2.png}}  % 左侧小logo
+\fancyhead[C]{\nouppercase{\leftmark}}                    % 中间章节名
+\fancyhead[R]{\thepage}                                   % 右侧页码
+\fancyfoot[C]{\includegraphics[height=0.6cm]{logo3.png}}
+\renewcommand{\headrulewidth}{0.3pt}                      % 页眉线粗细
+\renewcommand{\footrulewidth}{0.3pt}
+
+% ===== 正文开始 =====
+\begin{document}
+
+% ===== 标题页（无页眉页脚）=====
+\thispagestyle{empty}
+\backgroundsetup{contents={}}
+\maketitle
+
+\begin{abstract}
+    \centering
+    此处为摘要
+    \par\textbf{关键词：}这里是关键词；这里是关键词.
+\end{abstract}
+
+\vspace{1.5cm}
+
+\begin{center}
+    \large
+    \begin{tabular}{ll}
+        \textbf{课程：} & 学会摸鱼 \\
+        \textbf{姓名：} & Kanttt0 \\
+        \textbf{班级：} & 24 \\
+        \textbf{时间：} & 2026 \\
+    \end{tabular}
+\end{center}
+\vfill
+
+% ===== 目录（罗马页码）=====
+\newpage
+\backgroundsetup{
+    scale=1,
+    angle=0,
+    opacity=0.25,
+    contents={\includegraphics[width=0.5\textwidth]{logo4.png}}
+}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+
+% ===== 正文（阿拉伯页码）=====
+\newpage
+\pagenumbering{arabic}
+
+\section{一级标题}
+\subsection{二级标题}
+\subsubsection{三级标题}
+
+正文内容在这里。这是一个示例段落，用于展示页眉、水印和正文排版效果。你可以在这里撰写你的论文或作业内容。
+
+\newpage
+\section{一级标题}
+\subsection{二级标题}
+\subsubsection{三级标题}
+
+继续撰写正文内容。页眉左侧有小logo，中间显示当前章节名，右侧显示页码。
+
+\newpage
+\section{一级标题}
+\subsection{二级标题}
+\subsubsection{三级标题}
+
+最后一节正文内容。目录页会自动生成引导点线，标题页有装饰线分隔。
+
+\newpage
+\begin{thebibliography}{99}
+    \bibitem{a}作者. \emph{文献}[M]. 地点:出版社，年份.
+    \bibitem{b}作者. \emph{文献}[M]. 地点:出版社，年份.
+\end{thebibliography}
+
+\end{document}
